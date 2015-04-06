@@ -1,0 +1,7 @@
+使用 docker 来部署 influxdb 并且持久化容器内容
+1. 数据容器
+docker run --name influxdata -v /data -d wppurking/influxdb echo 'influxdb data volume'
+2. influxdb
+docker run –name influxdb –volumes-from influxdata -d -p 8083:8083 -p 8086:8086 wppurking/influxdb run.sh
+3. 开启 collectd 插件
+docker run –name influxdb –volumes-from influxdata -d -p 8083:8083 -p 8086:8086 -p 25826:25826/udp -p 25826:25826/tcp wppurking/influxdb run.sh

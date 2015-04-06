@@ -1,0 +1,2 @@
+- mac os
+docker run -p 3000:3000 -v /Users/wyatt/Program/bit/metrics/grafana/data:/opt/grafana/data -v /Users/wyatt/Program/bit/metrics/grafana/conf:/etc/grafana grafana/grafana
